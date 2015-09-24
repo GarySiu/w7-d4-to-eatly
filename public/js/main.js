@@ -5,7 +5,7 @@ console.log('Hello world!');
 $(document).ready(function(){
 // declarations
   $foodList = $('#food-list');
-  $addFoodForm= $('#add-food-form');
+  $addFoodForm = $('#add-food-form');
 // event listners
   setListeners();
 // first ajax request to index foods
@@ -29,10 +29,8 @@ function render(data){
 
 function addFood(){
   event.preventDefault();
-  var newFood = {
-    name: $('#name').val(),
-    yumminess: $('#yumminess').val()
-  };
+  var newFood = $addFoodForm.serialize();
+
 // clear out the old values now that they're saved
   $('#name').val('');
   $('#yumminess').val('');

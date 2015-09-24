@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'))
 
 // body parser config
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 
 // DATA //
 
@@ -55,7 +55,7 @@ app.post("/foods", function (req, res) {
   newFood.name = req.body.name;
   newFood.yumminess = req.body.yumminess;
   foods.push(newFood);
-  res.json(foods);
+  res.json(newFood);
 })
 
 app.delete("/foods/:id", function (req, res) {
