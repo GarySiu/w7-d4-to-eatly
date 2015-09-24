@@ -62,6 +62,14 @@ app.delete("/foods/:id", function (req, res) {
   // finding an object with id = req.body.id out of the foods
   // remove item from array
   // render deleted object
+  console.log(req.params.id);
+  var selectedFood;
+  for(i = 0; i < foods.length; i++) {
+    req.params.id == foods[i].id ? selectedFood = i: null;
+  }
+  selectedFood = foods.splice(selectedFood, 1);
+  // console.log(foods);
+  res.json(selectedFood);
 })
 
 // listen on port 3000
