@@ -35,5 +35,8 @@ function addFood(){
   $('#name').val('');
   $('#yumminess').val('');
 
-  console.log(newFood);
+  $.post('/foods/', newFood)
+  .done(function(response){
+    $foodList.append('<div>' + response.name + ' - ' + response.yumminess +'</div>')
+  });
 }
