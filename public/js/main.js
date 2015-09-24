@@ -17,13 +17,13 @@ $(document).ready(function(){
 })
 
 function setListeners(){
-  $addFoodForm.on('submit', addFood)
+  $addFoodForm.on('submit', addFood);
 }
 
 function render(data){
   $foodList.empty();
   $.each(data, function(i, food){
-    $foodList.append('<div>' + food.name + ' - ' + food.yumminess +'</div>')
+    $foodList.append('<div class="results"><a class="pure-button pure-button-error delete">X</a><span class="results-text">' + food.name + '</span><span class="pure-badge-info">' + food.yumminess +'</span></div>')
   })
 }
 
@@ -37,6 +37,6 @@ function addFood(){
 
   $.post('/foods/', newFood)
   .done(function(response){
-    $foodList.append('<div>' + response.name + ' - ' + response.yumminess +'</div>')
+    $foodList.append('<div class="results"><a class="pure-button pure-button-error delete">X</a><span class="results-text">' + response.name + '</span><span class="pure-badge-info">' + response.yumminess +'</span></div>')
   });
 }

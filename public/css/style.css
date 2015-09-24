@@ -1,0 +1,30 @@
+body {
+  margin: 0 30%;
+}
+
+h1 {
+  font-size: 80px;
+  padding: 0;
+  margin-top: 0;
+}
+
+#food-list {
+  margin-top: 2em;
+}
+
+.results {
+  /*margin: 20px 0;*/
+}
+
+.results-text {
+  font-size: 40px;
+  margin: 0 5px;
+}
+
+.pure-badge-info {
+  vertical-align: top;
+}
+
+.delete {
+  font-size: 30%;
+}

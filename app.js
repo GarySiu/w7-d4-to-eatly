@@ -43,7 +43,7 @@ app.post("/foods", function (req, res) {
   // add new food to DB (array, really...)
   // send a response with newly created object
   // console.log('You have hit the correct route.')
-  console.log(req);
+  // console.log(req);
   // console.log(req.body);
   var foodIds = [];
   foods.forEach(function(food){

@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>To Eatly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>to eat.ly</title>
   <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
+  <link rel="stylesheet" href="/css/pure-min.css">
+  <link rel="stylesheet" href="/css/pure-extras.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>To Eatly?</h1>
-  <form action="/foods" method="POST" id="add-food-form">
-    <input type="text" name="name" id="name" placeholder="Name">
+  <h1>to eat.ly</h1>
+  <form action="/foods" method="POST" id="add-food-form" class="pure-form">
+    <input type="text" name="name" id="name" placeholder="Name" autofocus>
     <input type="text" name="yumminess" id="yumminess" placeholder="Yumminess">
-    <input type="submit">
+    <input type="submit" class="pure-button pure-button-primary">
   </form>
   <div id="food-list"></div>
 </body>
