@@ -33,9 +33,9 @@ function addFood(){
     name: $('#name').val(),
     yumminess: $('#yumminess').val()
   };
-
-  $('#name').empty();
-  $('#yumminess').empty();
+// clear out the old values now that they're saved
+  $('#name').val('');
+  $('#yumminess').val('');
 
   console.log(newFood);
 }

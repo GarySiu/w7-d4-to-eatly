@@ -11,6 +11,7 @@ app.use(express.static(__dirname + '/public'))
 
 // body parser config
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 // DATA //
 
@@ -42,8 +43,8 @@ app.post("/foods", function (req, res) {
   // add new food to DB (array, really...)
   // send a response with newly created object
   // console.log('You have hit the correct route.')
-  // console.log(req.params);
-  console.log(req.body);
+  console.log(req);
+  // console.log(req.body);
   var foodIds = [];
   foods.forEach(function(food){
      foodIds.push(food.id);
