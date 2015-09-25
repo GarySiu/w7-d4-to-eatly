@@ -45,12 +45,7 @@ app.post("/foods", function (req, res) {
   // console.log('You have hit the correct route.')
   // console.log(req);
   // console.log(req.body);
-  var foodIds = [];
-  for(i = 0; i < foods.length; i++ ){
-     foodIds.push(foods[i].id);
-  };
-    
-  var newId = Math.max.apply(null, foodIds) + 1;
+  var newId = foods[foods.length - 1].id + 1;
   var newFood = {
     id: newId,
     name: req.body.name,
@@ -69,7 +64,7 @@ app.delete("/foods/:id", function (req, res) {
   // console.log(req.params.id);
   var selectedFood;
   for(i = 0; i < foods.length; i++) {
-    if(req.params.id === foods[i].id){selectedFood = i};
+    if(req.params.id === Number(foods[i].id)){selectedFood = i};
   }
   selectedFood = foods.splice(selectedFood, 1);
   // console.log(foods);
