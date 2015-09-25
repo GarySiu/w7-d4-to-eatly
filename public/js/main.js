@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 function setListeners(){
   $addFoodForm.on('submit', addFood);
-  $('body').on('click', '.delete', deleteFood);
+  $foodList.on('click', '.delete', deleteFood);
 }
 
 function render(data){
@@ -33,7 +33,7 @@ function addFood(){
 
 // clear out the old values now that they're saved
   $addFoodForm.trigger('reset');
-  
+
   $.post(endpoint, newFood)
   .done(function(response){
     $foodList.append('<div class="results"><a class="pure-button pure-button-error delete" data-id="'+ response.id +'">X</a><span class="results-text">' + response.name + '</span><span class="pure-badge-info">' + response.yumminess +'</span></div>')
