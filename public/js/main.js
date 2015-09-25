@@ -48,6 +48,6 @@ function deleteFood(){
     method: 'delete'
   })
   .done(function(response){
-    element.parent().remove()
+    element.parent().fadeOut(400, $.remove)
   })
 }
