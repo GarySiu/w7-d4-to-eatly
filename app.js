@@ -46,14 +46,17 @@ app.post("/foods", function (req, res) {
   // console.log(req);
   // console.log(req.body);
   var foodIds = [];
-  foods.forEach(function(food){
-     foodIds.push(food.id);
-  });
+  for(i = 0; i < foods.length; i++ ){
+     foodIds.push(foods[i].id);
+  };
+    
   var newId = Math.max.apply(null, foodIds) + 1;
-  var newFood = {};
-  newFood.id = newId;
-  newFood.name = req.body.name;
-  newFood.yumminess = req.body.yumminess;
+  var newFood = {
+    id: newId,
+    name: req.body.name,
+    yumminess: req.body.yumminess
+  };
+  
   foods.push(newFood);
   res.json(newFood);
 })
