@@ -56,7 +56,7 @@ app.post("/foods", function (req, res) {
     name: req.body.name,
     yumminess: req.body.yumminess
   };
-  
+
   foods.push(newFood);
   res.json(newFood);
 })
@@ -69,7 +69,7 @@ app.delete("/foods/:id", function (req, res) {
   // console.log(req.params.id);
   var selectedFood;
   for(i = 0; i < foods.length; i++) {
-    if(req.params.id == foods[i].id){selectedFood = i};
+    if(req.params.id === foods[i].id){selectedFood = i};
   }
   selectedFood = foods.splice(selectedFood, 1);
   // console.log(foods);
