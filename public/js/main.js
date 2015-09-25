@@ -32,9 +32,8 @@ function addFood(){
   var newFood = $addFoodForm.serialize();
 
 // clear out the old values now that they're saved
-  $('#name').val('');
-  $('#yumminess').val('');
-
+  $addFoodForm.trigger('reset');
+  
   $.post(endpoint, newFood)
   .done(function(response){
     $foodList.append('<div class="results"><a class="pure-button pure-button-error delete" data-id="'+ response.id +'">X</a><span class="results-text">' + response.name + '</span><span class="pure-badge-info">' + response.yumminess +'</span></div>')
